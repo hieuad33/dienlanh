@@ -44,14 +44,14 @@ Trang chủ @endsection
 
           <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
 
-           
+           <button>gọi ngay</button>
          
           </div>
         </div>
 
         <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
           <div class="slides-1 swiper" data-aos="fade-up">
-          <div class="swiper-wrapper" style="max-height: 500px;">
+          <div class="swiper-wrapper" style="max-height: 300px;">
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img  style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/1/banner/1.png')}}"  alt="điện lạnh đà nẵng">
@@ -161,8 +161,8 @@ Trang chủ @endsection
           @endforeach
           
 
-            <div class="row d-flex justify-content-center">
-              <a class="btn btn-primary col-lg-2  " href="{{route('service')}}">Xem tất cả dịch vụ </a>
+            <div class="row d-flex justify-content-center mt-3">
+              <a class="btn btn-primary col-lg-2 "  data-aos-delay="300" href="{{route('service')}}">Xem tất cả dịch vụ </a>
             </div>
 
         </div>
@@ -295,6 +295,9 @@ Trang chủ @endsection
    
 
         </div>
+         <div class="row d-flex justify-content-center mt-3">
+              <a class="btn btn-primary col-lg-2  "  data-aos-delay="300" href="{{route('posts')}}">Xem thêm </a>
+            </div>
 
       </div>
     </section><!-- End Pricing Section -->
