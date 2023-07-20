@@ -11,7 +11,27 @@ class ServiceController extends Controller
 {
     public function getview(){
         $services = Service::all();
-        return view('service',['services'=> $services]);
+        return view('service',['services'=> $services]);    
+    }
+
+    public function getServiceslug($slug){
+        $service = Service::where('slug',$slug)->first();
+        if($service)
+        {
+            $service->view++;
+            $service->save();
+             $services = Service::where('slug','!=', $slug)->take(5)->get();
+             
+            return view('service.serviceview')
+                    ->with('services',$services)
+                    ->with('service',$service);
+            
+        }
+        else
+        {
+            return 404;
+        }
+       
     }
 
      public function getList()
@@ -27,8 +47,8 @@ class ServiceController extends Controller
     public function postAdd(Request $request)
     {
         $rules= [
-                'name'=>'required|min:3|max:100',
-                'des' =>'required|max:180',
+                'name'=>'required|min:3|max:150',
+                'des' =>'required',
                 'content'=> 'required',
                 'slug'=> 'required|unique:services,slug|alpha_dash',
                 ];
@@ -121,8 +141,8 @@ class ServiceController extends Controller
             if(true || $service->user_id == Auth::user()->id){
                 if($service->slug == $request->input('slug')){
                    $rules= [
-                'name'=>'required|min:3|max:100',
-                'des' =>'required|max:180',
+                'name'=>'required|min:3|max:150',
+                'des' =>'required',
                 'content'=> 'required',
                
                 ];

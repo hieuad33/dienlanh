@@ -3,10 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostsViewController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,35 +25,29 @@ use Illuminate\Support\Facades\Route;
 //view cho khách hàng
 
 //trang chủ
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index']);
 Route::get('/about', function () {
     return view('about');
-});
-Route::get('/services', [ServiceController::class,'getview']);
+})->name('about');
+Route::get('/services', [ServiceController::class,'getview'])->name('service');
 Route::get('/services/{slug}', [ServiceController::class,'getServiceslug']);
+Route::get('/services/search/{search}', [ServiceController::class,'getSearch']);
 Route::get('/services/{id}', [ServiceController::class,'getService']);
-Route::get('/home', [Controller::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/posts/{slug}', [ServiceController::class,'getServiceslug']);
-Route::get('/posts', function () {
-    return view('blog');
-});
+Route::get('/posts/{slug}', [PostsViewController::class,'getPostslug']);
+Route::get('/posts/search/{search}', [PostsViewController::class,'getSearch']);
+Route::get('/posts/category/{slug}', [PostsViewController::class,'getCategoryslug']);
+Route::get('/posts/tags/{slug}', [PostsViewController::class,'getTagslug']);
+Route::get('/posts', [PostsViewController::class,'index'])->name('posts');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
-    Route::get('/', function () {
-    return view('admin.index');;
-})->name('admin');
-    /* Group for profile */
-   
-    /* Group post*/
-  
-    /* Group for admin */
+    Route::get('/',[HomeController::class,'getdashbroad'])->name('admin');
+
     Route::middleware('auth')->group(function () {
         /* Group category */
          Route::prefix('category')->group(function () {

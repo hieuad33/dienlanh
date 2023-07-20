@@ -81,12 +81,12 @@
                                     <i class="fa fa-users fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">{{ $num_admin}}</div>
-                                    <div>Người quản trị!</div>
+                                    <div class="huge">{{ $num_sv}}</div>
+                                    <div>Dịch vụ</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="admin/author">
+                        <a href="admin/service">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -95,6 +95,31 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                 <div class="col-lg-9 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-pencil fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ $num_post }}</div>
+                                    <div>Bài Viết!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="admin/post">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
             </div>
     </div>
 @endsection

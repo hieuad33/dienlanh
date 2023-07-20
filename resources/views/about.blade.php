@@ -1,79 +1,26 @@
-<!DOCTYPE html>
-<html lang="VN">
+<x-main-layout>
+  @section('page')
+Thông tin về doanh nghiệp @endsection   
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Điện Lạnh Đình Quốc</title>
-  <meta content="Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn tại khu vực đà nẵng">
+ @section('meta')
+ <meta content="Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn tại khu vực đà nẵng">
   <meta content="Điện lạnh tại đà nẵng, sửa điều hòa tại đà nẵng, điện lạnh đình Quốc, sửa máy làm kem, vệ sinh điều hòa, sửa tủ lạnh" name="keywords">
+ @endsection  
 
-  <meta property="og:type" content="article">
+  
+@section('share')
+ <meta property="og:type" content="article">
 <meta property="og:title" content="Điện Lạnh Đình Quốc | Điện lạnh tại đà nẵng">
-<meta property="og:image" content="ảnh khi share">
+<meta property="og:image" content="{{asset('upload/home/share.png')}}">
  <meta property="og:description" content="CChúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn">
-<meta property="og:url" content="liên kết khi bấm vào">
+<meta property="og:url" content="{{route('home')}}">
+@endsection 
+@section('css')
 
+@endsection 
+@section('js')
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Logis
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="">
-        <h1>Đình Quốc</h1>
-      </a>
-
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="/" >Trang chủ</a></li>
-          <li><a href="about">Thông tin</a></li>
-          <li><a href="services">Dịch Vụ</a></li>
-          <li><a href="posts">Bài Viết</a></li>
-          <li><a href="contact">Liên hệ</a></li>
-         <!-- <li><a class="get-a-quote" href="get-a-quote.html">Call Now</a></li> -->
-        </ul>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-  <!-- End Header -->
-
+@endsection  
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
     <div class="container">
@@ -99,13 +46,23 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/picture/view/anh-gioi-thieu.png" class="img-fluid mb-3 mb-lg-0" alt="điện lạnh đà nẵng">
+                <img src="{{asset('upload/home/1.png')}}" class="img-fluid mb-3 mb-lg-0" alt="điện lạnh đà nẵng">
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg"   alt="">
+                <img src="{{asset('upload/home/2.png')}}"   alt="điện lạnh Đình Quốc">
+              </div>
+            </div><!-- End testimonial item -->
+             <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{{asset('upload/home/3.png')}}"   alt="Sửa điều hòa đà nẵng">
+              </div>
+            </div><!-- End testimonial item -->
+             <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{{asset('upload/home/4.png')}}"   alt="sửa tủ lạnh đà nẵng">
               </div>
             </div><!-- End testimonial item -->
           </div>
@@ -120,53 +77,6 @@
 
   <main id="main">
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 service-item d-flex" data-aos="fade-up">
-            <div class="icon flex-shrink-0"><i class="fa-solid fa-toolbox"></i></div>
-            <div>
-              <h4 class="title">Chuyên nghiệp</h4>
-              <p class="description">Chúng tôi sở hữu những người thợ chuyên nghiệp và có kỹ năng về chuyên môn với nhiều năm kinh nghiệm.</p>
-              
-            </div>
-          </div>
-          <!-- End Service Item -->
-          <div class="col-lg-3 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-ramp-box"></i></div>
-            <div>
-              <h4 class="title">An toàn</h4>
-              <p class="description">Giải quyết các vấn đề, sự cố hư hỏng đúng kỹ thuật. Đem lại sự yên tâm tuyệt đối cho khách hàng khi sử dung dịch vụ của Điện Lạnh Đình Quốc</p>
-             
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="fa-sharp fa-solid fa-truck-fast"></i></div>
-            <div>
-              <h4 class="title">Nhanh chóng & Tiện lợi</h4>
-              <p class="description">Bạn không cần phải tới trung tâm của Điện Lạnh chỉ cần nhấc máy lên và gọi nhân viên của chúng tôi sẽ đến tận nhà sửa thiết bị của bạn.</p>
-            
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="fa-solid fa-piggy-bank"></i></div>
-            <div>
-              <h4 class="title">Giải pháp tối ưu</h4>
-              <p class="description">Chúng tôi cam kết mang lại dịch vụ tốt nhất cho khách hàng với giá cả hợp lý nhât</p>
-             
-            </div>
-          </div><!-- End Service Item -->
-           
-
-        </div>
-
-      </div>
-    </section><!-- End Featured Services Section -->
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about pt-0">
@@ -211,102 +121,8 @@
       </div>
     </section><!-- End About Us Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="service" class="services pt-0">
-      <div class="container" data-aos="fade-up">
+    
 
-        <div class="section-header">
-          <span>DỊCH VỤ</span>
-          <h2>DỊCH VỤ</h2>
-
-        </div>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/storage-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Storage</a></h3>
-              <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/logistics-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Logistics</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/cargo-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Cargo</a></h3>
-              <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/trucking-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Trucking</a></h3>
-              <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/packaging-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Packaging</a></h3>
-              <p>Illo consequuntur quisquam delectus praesentium modi dignissimos facere vel cum onsequuntur maiores beatae consequatur magni voluptates</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/warehousing-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Warehousing</a></h3>
-              <p>Quas assumenda non occaecati molestiae. In aut earum sed natus eatae in vero. Ab modi quisquam aut nostrum unde et qui est non quo nulla</p>
-            </div>
-          </div><!-- End Card Item -->
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing pt-0">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <span>BÀI VIẾT</span>
-          <h2>BÀI VIẾT</h2>
-
-        </div>
-
-        <div class="row gy-4">
-
-   
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -340,98 +156,9 @@
  
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>Điện lạnh Đình Quốc</span>
-          </a>
-          <p>Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn tại khu vực đà nẵng</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="zalo"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Liên kết</h4>
-          <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Thông tin</a></li>
-            <li><a href="#">Dịch vụ</a></li>
-            <li><a href="#">Bài viết</a></li>
-            <li><a href="#">liên hệ</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Dịch vụ</h4>
-          <ul>
-            <p>mang dich vụ</p>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Liên hệ</h4>
-          <p>
-             11 Nhơn Hòa 3<br>
-              Hoà An, Cẩm Lệ<br>
-               Đà Nẵng <br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-
-   
+ 
 
 
-    <div class="hotline-phone-ring-wrap">
-    <div class="hotline-phone-ring">
-        <div class="hotline-phone-ring-circle"></div>
-        <div class="hotline-phone-ring-circle-fill"></div>
-        <div class="hotline-phone-ring-img-circle"> <a href="tel:0000000000" class="pps-btn-img"> <img src="https://netweb.vn/img/hotline/icon.png" alt="so dien thoai" width="50"> </a></div>
-    </div>
-    <div class="hotline-bar">
-        <a href="tel:0000000000"> <span class="text-hotline">0000 000 000</span> </a>
-    </div>
+ 
+ </x-main-layout> 
 
-</div>
-<div class="float-icon-hotline">      
-    <ul class ="left-icon hotline">
-      <li class="hotline_float_icon"><a target="_blank" rel="nofollow" id="messengerButton" href="https://zalo.me/0375577911"><i class="fa fa-zalo animated infinite tada"></i><span>Zalo</span></a></li>
-      <li class="hotline_float_icon"><a target="_blank" rel="nofollow" id="messengerButton" href="https://www.messenger.com/t/vanhaiweb"><i class="fa fa-messenger animated infinite tada"></i><span>Facebook</span></a></li>
-    </ul>   
-</div>
-
-  </footer><!-- End Footer -->
-  <!-- End Footer -->
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>

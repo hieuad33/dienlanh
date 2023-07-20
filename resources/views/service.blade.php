@@ -1,6 +1,13 @@
 <x-main-layout>
 @section('page')
-Dich vụ @endsection    
+Dich vụ @endsection
+
+ @section('meta')
+<meta content="Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn tại khu vực đà nẵng">
+  <meta content="Điện lạnh tại đà nẵng, sửa điều hòa tại đà nẵng, điện lạnh đình Quốc, sửa máy làm kem, vệ sinh điều hòa, sửa tủ lạnh" name="keywords">
+ @endsection  
+
+     
 @section('share')
   <meta property="og:type" content="article">
   <meta property="og:title" content="Điện Lạnh Đình Quốc | Điện lạnh tại đà nẵng ">
@@ -32,7 +39,7 @@ Dich vụ @endsection
 
         <div class="row gy-4">
           @foreach($services as $service)
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{$loop->iteration*50}}">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="{{$loop->iteration*50}}">
             <div class="card">
               <div class="card-img">
                 <div  class="img-fluid" >
@@ -43,7 +50,7 @@ Dich vụ @endsection
                 @endif
                 </div>
               </div>
-              <h3><a href="/service/{{$service->slug}}" class="stretched-link">{{$service->name}}</a></h3>
+              <h3><a href="services/{{$service->slug}}" class="stretched-link">{{$service->name}}</a></h3>
               <p>{{$service->description}}</p>
             </div>
           </div><!-- End Card Item -->
