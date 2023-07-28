@@ -44,6 +44,8 @@ Route::get('/posts', [PostsViewController::class,'index'])->name('posts');
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+Route::get('/contact/{type}',[ContactController::class,'contact_type']);
+Route::post('scontact',[ContactController::class,'postContact'])->name('sendcontact');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::get('/',[HomeController::class,'getdashbroad'])->name('admin');

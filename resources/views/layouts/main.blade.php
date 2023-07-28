@@ -25,8 +25,8 @@
 
 
   <!-- Favicons -->
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('storage/photos/1/banner/logo.png')}}" rel="icon">
+  <link href="{{asset('storage/photos/1/banner/logo.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +61,7 @@
 
       <a href="{{route('home')}}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{asset('assets/img/logo.png')}}" alt="Điện lạnh Đình Quốc - Điện Lạnh Đà Nẵng">
+        <img src="{{asset('storage/photos/1/banner/logo.png')}}" alt="Điện lạnh Đình Quốc - Điện Lạnh Đà Nẵng">
         <h1>Đình Quốc</h1>
       </a>
 
@@ -74,7 +74,7 @@
           <li><a href="{{route('service')}}">Dịch Vụ</a></li>
           <li><a href="{{route('posts')}}">Bài Viết</a></li>
           <li><a href="{{route('contact')}}">Liên hệ</a></li>
-         <!-- <li><a class="get-a-quote" href="get-a-quote.html">Call Now</a></li> -->
+          <li><a class="get-a-quote" href="tel:{{$phone}}">Gọi ngay</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -119,8 +119,9 @@
           <h4>Liên hệ</h4>
           <p>
             
-            <strong>Điện thoại:</strong> {{$phone}}<br>
-            <strong>zalo:</strong> {{$phone}}<br>
+           
+            <strong>Điện thoại:</strong>  <a href="tel:{{$phone}}">{{$phone}}   <i class="fa fa-phone" ></i><br></a>
+            <strong>zalo:</strong>  <a href="https://zalo.me/{{$zalo}}">{{$zalo}}   <i class=" fa fa-commenting" ></i><br></a>
             <strong>Email:</strong> {{$email}}<br>
           </p>
 
@@ -168,7 +169,17 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
+<script type="text/javascript">
+  window.onpopstate = function(event) {
+  // Get the previous state
+  var state = event.state;
 
+  // If the previous state has a scroll position, scroll the slider to that position
+  if (state && state.scrollPosition) {
+    slider.scrollTop = state.scrollPosition;
+  }
+}
+</script>
 </body>
 
 </html>

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-use App\Http\Requests\StoreContactRequest;
-use App\Http\Requests\UpdateContactRequest;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Session;
 
 class ContactController extends Controller
 {
@@ -18,69 +19,52 @@ class ContactController extends Controller
         return view('contact');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+   public function getdata(){
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreContactRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreContactRequest $request)
-    {
-        //
-    }
+   }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Contact $contact)
-    {
-        //
-    }
+   public function contact_type($type){
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Contact $contact)
-    {
-        //
-    }
+    return view('contact')->with('type',$type);
+   }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateContactRequest  $request
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateContactRequest $request, Contact $contact)
-    {
-        //
-    }
+   public function postContact(Request $request){
+    $rules= [
+                'name'=>'required|min:2',
+                'phone' =>'required|size:10',
+                'message'=> 'required|min:4',
+                ];
+        $msg = [
+                'name.required'=>'Không được bỏ trống tên.',        
+                'name.min'=>'Tên quá ngắn',
+                'phone.required'=>'Không được bỏ trống số điện thoại.',
+                'phone.size'=>'Số điện thoại không hợp lệ',
+                'message.required'=> 'Không được bỏ trống message.',
+                'message.min' => 'Message quá ngắn!',
+            
+                ];
+        $validator = Validator::make($request->all(), $rules , $msg);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Contact $contact)
-    {
-        //
-    }
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }else{
+
+            $contact = new Contact();
+            $contact->type = $request->input('type');
+            $contact->name = $request->input('name');
+            $contact->phone = $request->input('phone');
+            $contact->email = $request->input('email');
+            $contact->message = $request->input('message');
+            $contact->save();
+             Session::flash('flash_success','Cám ơn bạn đã gửi phản hồi cho chúng tôi! Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.');
+        return redirect()->route('contact');
+
+        }
+
+
+   }
+
+
 }

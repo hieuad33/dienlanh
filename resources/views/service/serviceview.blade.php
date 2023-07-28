@@ -6,11 +6,13 @@ Dich vụ @endsection
   <meta content="Điện lạnh tại đà nẵng, sửa điều hòa tại đà nẵng, điện lạnh đình Quốc, sửa máy làm kem, vệ sinh điều hòa, sửa tủ lạnh" name="keywords">
  @endsection  
 @section('share')
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Điện Lạnh Đình Quốc | Điện lạnh tại đà nẵng ">
-  <meta property="og:image" content="ảnh khi share">
-  <meta property="og:description" content="CChúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn">
-  <meta property="og:url" content="liên kết khi bấm vào">
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="Điện Lạnh Đình Quốc | {{$service->name}} ">
+  <meta property="og:image" content="{{asset("$service->image")}}">
+  <meta property="og:description" content="{{$service->description}}">
+  <meta property="og:locale" content="vi" />
+    <meta property="og:url" content="{{url("services/{$service->slug}")}}">
+
 @endsection 
 @section('css')
 
@@ -70,14 +72,17 @@ Dich vụ @endsection
 
           </div>
 
-          <div class="col-lg-9 "  style="    box-shadow: 0 3px 20px -2px rgb(0 0 0 / 13%); padding: 10px;">
+          <div class="col-lg-9 detail-service ">
            
-            <h2>{{$service->name}}</h2>
-              <p>Điện lạnh Đình Quốc cung cấp dịch vụ {{$service->name}} hàng đầu tại Đà Nẵng </p>
-               <img class=" img-fluid services-img col-lg-9 " style=" max-height: 300px ; "src="{{asset("$service->image")}}" alt="{{$service->slug}}-da-nang" >
-               <div class="row col-lg-12" style="display:block;     font-family: Roboto,Helvetica,Arial,sans-serif;">
-                    {!!$service->detail!!}
-               </div>
+            <h1>{{$service->name}}</h1>
+            <p>Điện lạnh Đình Quốc cung cấp dịch vụ {{$service->name}} hàng đầu tại Đà Nẵng </p>
+              <img class="img-fluid services-img" style=" max-height: 300px ; "src="{{asset("$service->image")}}" alt="{{$service->slug}}-da-nang" >
+            <div class="row col-lg-12 ">
+                <div class="edit">
+                   {!!$service->detail!!}
+                </div>
+                   
+            </div>
            
 
               @if($service->price)
@@ -97,38 +102,8 @@ Dich vụ @endsection
     flex-wrap: wrap;
     justify-content: space-around;">
 
-            <div class="info-item d-flex  align-items-start ">
-              <i class="btn me-2 btn-primary bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h4>Địa chỉ:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-            </div><!-- End Info Item -->
+            <a href="{{url("contact/{$service->slug}")}}"><img style="width:200px;" src="https://manhquanauto.vn/media/7915/lienhe-1-1.gif?width=466&height=151">  </a> 
 
-            <div class="info-item d-flex  align-items-start">
-              <i class="me-2 btn  btn-primary bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h4>Di động:</h4>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          
-            <div class="info-item d-flex  align-items-start">
-              <i class=" btn me-2 btn-primary bi bi-facebook flex-shrink-0"></i>
-              <div>
-                <h4>Facebook:</h4>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex  align-items-start">
-              <i class=" btn me-2 btn-primary bi bi-phone flex-shrink-0"></i>
-              <div>
-                <h4>Zalo:</h4>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div><!-- End Info Item -->
 
 
           </div>

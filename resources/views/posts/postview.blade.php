@@ -9,11 +9,12 @@
 
  
 @section('share')
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Điện Lạnh Đình Quốc | Điện lạnh tại đà nẵng ">
-  <meta property="og:image" content="ảnh khi share">
-  <meta property="og:description" content="CChúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn">
-  <meta property="og:url" content="liên kết khi bấm vào">
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="{{$post->name}} || Điện Lạnh Đình Quốc ">
+  <meta property="og:image" content="{{asset('$post->feture')}}">
+  <meta property="og:description" content="{{$post->description}}">
+  <meta property="og:locale" content="vi" />
+    <meta property="og:url" content="{{url("/posts/{$post->slug}")}}">
 @endsection 
 @section('css')
 
@@ -103,7 +104,7 @@
                          <p>{{$post->description}}</p>
                            <img class=" img-fluid services-img p-5 " style=" width:100%; max-height: "src="{{asset("$post->feture")}}" alt="{{$post->slug}}-da-nang" >
 
-                        <div class="pl-3">
+                        <div class="pl-3 edit">
                            {!!$post->content!!}
                         </div>
                    

@@ -22,12 +22,12 @@ Liên hệ @endsection
 
 @endsection  
  <?php
-    $phone='0123434343';
-    $zalo='0941757025';
-    $facebook='abc';
-    $mess='abc';
+   $phone='0973711196';
+    $zalo='0906344254';
+    $facebook='https://www.facebook.com/Trungtamdienlanhdanangdinhquoc/';
+    $mess='https://www.facebook.com/messages/t/629206380552075';
     $address='11 Nhơn Hòa 3 - Hoà An, Cẩm Lệ - Đà Nẵng ';
-    $email='hieuad88@gmail.com';
+    $email='';
   ?>
   <main id="main">
 
@@ -62,7 +62,7 @@ Liên hệ @endsection
         <div class="row gy-4 mt-4">
 
           <div class="col-lg-4">
-
+            <h4 class="pb-1">Thông tin liên hệ:</h4>
             <div class="info-item d-flex">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
@@ -99,25 +99,50 @@ Liên hệ @endsection
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <h4 class="pb-1">Gửi phản hồi</h4>
+             @if(session('flash_success'))
+                <div class="alert alert-success">
+                    <strong>Thành Công! </strong>{{ session('flash_success') }}
+                </div>
+                @endif
+            <form action="{{route('sendcontact')}}" method="post" role="form" class="php-email-form">
               <div class="row">
+                 @csrf
+                 
+                  @if(!!isset($type))
+                  
+                    <input type="text"  name="type" class="form-control d-none" value="{{$type}}" >
+                  @else
+                  <input type="text"  name="type" class="form-control d-none" value="{{old('type')}}" >
+                  @endif
+              
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Tên của bạn*" required>
+                  <input type="text" name="name" class="form-control" value="{{ old('name')}}" id="name" placeholder="Tên của bạn*" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="phone" class="form-control" name="phone" id="phone" placeholder="số điện thoại*" required>
+                  <input type="phone" class="form-control" name="phone" id="phone" value="{{ old('phone')}}" placeholder="số điện thoại*" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" >
+                <input type="email" class="form-control" name="email" id="email" value="{{ old('email')}}" placeholder="Email" >
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message*" required></textarea>
+                <textarea class="form-control" name="message" rows="5" value="{{ old('message')}}" placeholder="Message*" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                 @if(count($errors)>0)
+             <div class="alert alert-danger">
+                @foreach($errors->all() as $err)
+                {{ $err }}<br>
+                @endforeach
+            </div>
+            @endif
+            
+            @if(session('errfile'))
+                <div class="alert alert-danger">
+                    <strong>{{session('errfile')}}</strong>
+                </div>
+            @endif
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>

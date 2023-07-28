@@ -22,12 +22,12 @@ Trang chủ @endsection
 
 @endsection 
 <?php
-    $phone='0123434343';
-    $zalo='0941757025';
-    $facebook='abc';
-    $mess='abc';
+    $phone='0973711196';
+    $zalo='0906344254';
+    $facebook='https://www.facebook.com/Trungtamdienlanhdanangdinhquoc/';
+    $mess='https://www.facebook.com/messages/t/629206380552075';
     $address='11 Nhơn Hòa 3 - Hoà An, Cẩm Lệ - Đà Nẵng ';
-    $email='hieuad88@gmail.com';
+    $email='';
   ?> 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
@@ -57,7 +57,6 @@ Trang chủ @endsection
                 <img  style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/1/banner/1.png')}}"  alt="điện lạnh đà nẵng">
               </div>
             </div><!-- End testimonial item -->
-
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img  style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/1/banner/2.png')}}"   alt="điện lạnh Đình Quốc">
