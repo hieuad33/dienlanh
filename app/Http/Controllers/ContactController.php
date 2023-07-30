@@ -19,10 +19,6 @@ class ContactController extends Controller
         return view('contact');
     }
 
-   public function getdata(){
-
-   }
-
    public function contact_type($type){
 
     return view('contact')->with('type',$type);
@@ -65,6 +61,45 @@ class ContactController extends Controller
 
 
    }
+
+        public function getList()
+    {
+        $tags=Tags::all();
+        return view('admin.tag.list',['tags'=>$tags]);
+    }
+
+   
+    public function dataTable()
+    { 
+        $model = Tags::query();
+        return DataTables::eloquent($model)
+                ->addColumn('post_count', function(Tags $tag) {
+                    return $tag->posts->count() . ' bài';
+                })
+                ->addColumn('action', '
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#show-update">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa 
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#show-delete">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Xoá
+                    </button>')
+                ->make(true);
+    }
+
+  
+
+    public function delete(Request $request)
+    {
+        if($request->ajax()){
+            $tag = Tags::find($request->input('id'));
+            if($tag){
+                $tag->posts()->detach();
+                $tag->delete();
+                return 'ok';
+            }
+            else return 'Không tồn tại tag.';
+        } else return 'err';
+    }
 
 
 }

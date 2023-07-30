@@ -49,10 +49,10 @@ Bài viết @endsection
       <div class="container" data-aos="fade-up">
         <div class="row m-4  justify-content-end" >
           <div  class="col-lg-4 ">
-            <div class="input-group ">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" class="btn btn-outline-primary">search</button>
-          </div>
+            <form class="input-group " method="get" href="{{url('/posts/search/')}}">
+            <input name="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-outline-primary">search</button>
+          </form>
           </div>
           
         </div>
@@ -61,25 +61,26 @@ Bài viết @endsection
             <div class="pricing-item featured">
               <h3>Danh mục bài viết</h3>
               <ul>
+                 <li><i class="bi bi-check"></i><a href="{{url("/posts/")}}">Tất cả</a></li>
                 @foreach($categories as $cate)
                   @if($cate->parent_id)
                
                   @else
-                   <li><i class="bi bi-check"></i><a href="">{{$cate->name}}</a></li>
+                   <li><i class="bi bi-check"></i><a href="{{url("/posts/category/{$cate->slug}")}}">{{$cate->name}}({{$cate->posts()->count()}})</a></li>
                   @endif
                 @endforeach              
               </ul>
 
             </div>
-            <div class="pricing-item featured">
+            <div class="pricing-item  ">
               <h3>Tag</h3>
-              <ul>
+              <div class="d-flex flex-wrap tag">
                @foreach($tags as $tag)
                   
-                <li><i class="bi bi-check"></i><a href="">{{$tag->slug}}</a></li>
+                <p><a href="{{url("/posts/tags/{$tag->slug}")}}">{{$tag->slug}} ({{$tag->posts()->count()}})</a></p>
                 @endforeach
               
-              </ul>
+              </div>
 
             </div>
 
@@ -87,6 +88,9 @@ Bài viết @endsection
             
           </div>
           <div class="col-lg-9">
+            @if($posts->count()==0)
+            <h3>Không có bài viết</h3>
+            @endif
             @foreach($posts as $post)
             <div class="pricing-item ">
               <div class="row gy-4 align-items-center features-item aos-init aos-animate" data-aos="fade-up">
@@ -98,7 +102,7 @@ Bài viết @endsection
                   <p class="fst-italic">
                     {{$post->description}}
                   </p>
-                  <a class="" href="{{url('posts/')}}/{{$post->slug}}">Xem chi tiết </a>
+                  <a class="" href="{{url('posts')}}/{{$post->slug}}">Xem chi tiết </a>
                   
                 </div>
               </div>

@@ -21,7 +21,17 @@
                 @if(Auth::user())
                 <li><a href="admin/profile"><i class="fa fa-user fa-fw"></i> {{ Auth::User()->name }}</a></li>
                 <li class="divider"></li>
-                <li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+                </li>
                 @endif
             </ul>
             <!-- /.dropdown-user -->

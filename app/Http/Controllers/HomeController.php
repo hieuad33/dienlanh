@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Posts;
-use App\Models\tags;
+use App\Models\Tags;
 use App\Models\Categories;
 
 

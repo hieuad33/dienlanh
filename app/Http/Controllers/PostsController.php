@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Posts;
 use App\Models\User;
-use App\Models\tags;
+use App\Models\Tags;
 use App\Models\Categories;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;

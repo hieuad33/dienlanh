@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ServiceController;
 
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,8 @@ Route::post('scontact',[ContactController::class,'postContact'])->name('sendcont
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::get('/',[HomeController::class,'getdashbroad'])->name('admin');
+    Route::get('/dashboard',[HomeController::class,'getdashbroad']);
+    
 
     Route::middleware('auth')->group(function () {
         /* Group category */
@@ -91,19 +94,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         });
     
         /* Group author */
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+         Route::prefix('author')->group(function () {
+            Route::get('/',  [AdminController::class,'getList'])->name('list-author');
+            Route::get('data',[AdminController::class,'dataTable'])->name('data-author');
+            Route::delete('delete', [AdminController::class,'delete']);
+        });
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('pr.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('pr.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('pr.destroy');
         
     });
 });
 
 
-
-//admin
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::middleware('auth')->group(function () {
@@ -113,12 +116,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 }); 
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function (){
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web','auth']], function (){
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
 // xay ra ko khong co rt ton tai 404
-//Route::fallback(function () {
-//    return view(404);
-//});
+Route::fallback(function () {
+    return view(404);
+});
 require __DIR__.'/auth.php';

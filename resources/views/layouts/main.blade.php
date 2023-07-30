@@ -14,13 +14,13 @@
   
   @yield('css')
 
- <?php
-    $phone='0123434343';
-    $zalo='0941757025';
-    $facebook='abc';
-    $mess='abc';
+<?php
+    $phone='0973711196';
+    $zalo='0906344254';
+    $facebook='https://www.facebook.com/Trungtamdienlanhdanangdinhquoc/';
+    $mess='https://www.facebook.com/messages/t/629206380552075';
     $address='11 Nhơn Hòa 3 - Hoà An, Cẩm Lệ - Đà Nẵng ';
-    $email='hieuad88@gmail.com';
+    $email='';
   ?>
 
 
@@ -51,6 +51,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v17.0&appId=629027055659407&autoLogAppEvents=1" nonce="YkGafAns"></script>
 </head>
 
 <body>
@@ -96,10 +98,12 @@
             <span>Điện lạnh Đình Quốc</span>
           </a>
           <p>Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn tại khu vực đà nẵng</p>
-          <div class="social-links d-flex mt-4">
          
-            <a href="{{$facebook}}" class="facebook"><i class="bi bi-facebook"></i></a>
-          </div>
+          <div class="fb-page" 
+             data-href="https://www.facebook.com/Trungtamdienlanhdanangdinhquoc/"
+            data-width="380" 
+            data-hide-cover="false"
+            data-show-facepile="false"></div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
@@ -120,8 +124,8 @@
           <p>
             
            
-            <strong>Điện thoại:</strong>  <a href="tel:{{$phone}}">{{$phone}}   <i class="fa fa-phone" ></i><br></a>
-            <strong>zalo:</strong>  <a href="https://zalo.me/{{$zalo}}">{{$zalo}}   <i class=" fa fa-commenting" ></i><br></a>
+            <strong>Điện thoại:</strong>  <a href="tel:{{$phone}}" target="_blank">{{$phone}}   <i class="fa fa-phone" ></i><br></a>
+            <strong>zalo:</strong>  <a href="https://zalo.me/{{$zalo}}" target="_blank">{{$zalo}}   <i class=" fa fa-commenting" ></i><br></a>
             <strong>Email:</strong> {{$email}}<br>
           </p>
 
@@ -156,7 +160,7 @@
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   
-  <div id="preloader"></div>
+
 
     @yield('js')
 

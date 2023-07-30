@@ -15,8 +15,8 @@
             <li>
                 <a href="admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
-            <li>
-                <a href="admin/profile"><i class="fa fa-user fa-fw"></i> Cá Nhân</a>
+            <li style="display: none;">
+                <a href="{{route('profile.edit')}}"><i class="fa fa-user fa-fw"></i> Cá Nhân</a>
             </li>
 
             <li>

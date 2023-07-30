@@ -67,7 +67,7 @@ Liên hệ @endsection
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h4>Địa chỉ:</h4>
-                <p>{{$address}}</p>
+                  <a href="https://www.google.com/maps?ll=16.050488,108.172976&z=16&t=m&hl=vi&gl=US&mapclient=embed&cid=9577128908958267783" target="_blank">{{$address}}  </a>
               </div>
             </div><!-- End Info Item -->
 
@@ -75,27 +75,29 @@ Liên hệ @endsection
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h4>Di động:</h4>
-                <p>{{$phone}}</p>
+                <a href="tel:{{$phone}}" target="_blank">{{$phone}}  </a>
               </div>
             </div><!-- End Info Item -->
 
-            <div class="info-item d-flex">
-              <i class="bi bi-phone flex-shrink-0"></i>
-              <div>
-                <h4>Facebook:</h4>
-                <p>{{$facebook}}</p>
-              </div>
-            </div><!-- End Info Item -->
+            
 
             <div class="info-item d-flex">
               <i class="bi bi-phone flex-shrink-0"></i>
               <div>
                 <h4>Zalo:</h4>
-                <p>{{$zalo}}</p>
+  
+                 <a href="https://zalo.me/{{$zalo}}" target="_blank">{{$zalo}}  </a>
               </div>
             </div><!-- End Info Item -->
 
-
+            <div class="info-item d-flex">
+              <i class="bi bi-facebook flex-shrink-0"></i>
+              <div class="fb-page" 
+data-href="https://www.facebook.com/facebook"
+data-width="300" 
+data-hide-cover="false"
+data-show-facepile="false"></div>
+            </div><!-- End Info Item -->
           </div>
 
           <div class="col-lg-8">

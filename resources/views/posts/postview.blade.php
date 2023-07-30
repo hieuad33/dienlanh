@@ -90,25 +90,40 @@
 
           <div class="col-lg-9 ">
                <div class="row col-lg-12 p-4 mb-4"  style="    box-shadow: 0 3px 20px -2px rgb(0 0 0 / 13%); padding: 10px; font-family: Roboto,Helvetica,Arial,sans-serif;">
-                <p>By Điện lạnh Đình Quốc || Last updated {{$post->updated_at}} !!</p>
-                <p> <i class="fa fa-eye"></i> {{$post->view}}</p>
-                <p>{{$category->name}}</p>
+                <p>By Điện lạnh Đình Quốc || Last updated {{$post->updated_at}} !!  <button class="btn btn-primary"> <i class="fa fa-eye"></i> {{$post->view}} </button></p>
+                <div class="d-flex flex-wrap ">
+                  
+                <p class="ps-1"> Danh mục: {{$category->name}}</p>
 
-               @foreach($post->tags as $tag)
-              <a href="tag/{{ $tag->name }}" title="3 topics" style="font-size: 22pt;">{{ $tag->name }}</a>
-              @endforeach
+                </div>
+                
+                
+
+             
               
             
                         
                         <h1 class="title">{{$post->title}} </h1>
+
                          <p>{{$post->description}}</p>
                            <img class=" img-fluid services-img p-5 " style=" width:100%; max-height: "src="{{asset("$post->feture")}}" alt="{{$post->slug}}-da-nang" >
 
                         <div class="pl-3 edit">
                            {!!$post->content!!}
                         </div>
+                        <div>
+                 <p>Từ khóa :</p>
+              <div class="d-flex flex-wrap tag">
+               @foreach($post->tags as $tag)
+                  
+                <p><a href="{{url("/posts/tags/{$tag->slug}")}}">{{$tag->slug}} ({{$tag->posts()->count()}})</a></p>
+                @endforeach
+              
+              </div>
+
                    
                </div>
+                              </div>
            
 
           

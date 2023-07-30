@@ -44,7 +44,8 @@ Trang chủ @endsection
 
           <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
 
-           <button>gọi ngay</button>
+           <a  href="tel:{{$phone}}"> <img style="max-height:100px" src="{{asset('upload/call.gif')}}" alt="goi ngay"></a>
+
          
           </div>
         </div>
@@ -216,7 +217,7 @@ Trang chủ @endsection
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h4>Địa chỉ:</h4>
-                <p>{{$address}}</p>
+                 <a href="https://www.google.com/maps?ll=16.050488,108.172976&z=16&t=m&hl=vi&gl=US&mapclient=embed&cid=9577128908958267783" target="_blank">{{$address}}  </a>
               </div>
             </div><!-- End Info Item -->
 
@@ -224,7 +225,7 @@ Trang chủ @endsection
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h4>Di động:</h4>
-                <p>{{$phone}}</p>
+                <a href="tel:{{$phone}}" target="_blank">{{$phone}}  </a>
               </div>
             </div><!-- End Info Item -->
 
@@ -232,7 +233,8 @@ Trang chủ @endsection
               <i class="bi bi-phone flex-shrink-0"></i>
               <div>
                 <h4>Facebook:</h4>
-                <p>{{$facebook}}</p>
+                
+                 <a href="{{$facebook}}" target="_blank"> ĐIỆN LẠNH ĐÌNH QUỐC </a>
               </div>
             </div><!-- End Info Item -->
 
@@ -240,7 +242,7 @@ Trang chủ @endsection
               <i class="bi bi-phone flex-shrink-0"></i>
               <div>
                 <h4>Zalo:</h4>
-                <p>{{$zalo}}</p>
+                <a href="https://zalo.me/{{$zalo}}" target="_blank">{{$zalo}}  </a>
               </div>
             </div><!-- End Info Item -->
 
