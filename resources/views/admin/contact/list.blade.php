@@ -21,8 +21,11 @@
                     <tr class="text-center">
                         <th>ID</th>
                         <th>Tên</th>
-                        <th>Đường Dẫn</th>
-                        <th>Số Bài Viết</th>
+                        <th>phone</th>
+                        <th>Email</th>
+                        <th>Loại</th>
+                        <th>Tin nhắn</th>
+                    
                         <th>Hành Động</th>
                     </tr>
                 </thead>
@@ -117,7 +120,7 @@
 
 @endsection
 @section('script')
-<script src="js/slug.js"></script>
+
  <!-- DataTables JavaScript -->
  <script type="text/javascript">
     $(document).ready(function() {
@@ -136,12 +139,14 @@
         var datatable = $('#tag_list').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{!! route('data-tag') !!}',
+            ajax: '{!! route('data-contact') !!}',
             columns: [
-                { data: 'tags_id', name: 'tags_id' },
+                { data: 'id', name: 'id' },
                 { data: 'name', name: 'name' },
-                { data: 'slug', name: 'slug' },
-                { data: 'post_count', name: 'post_count' },
+                { data: 'phone', name: 'phone' },
+                { data: 'email', name: 'email' },
+                { data: 'type', name: 'type' },
+               { data: 'message', name: 'message' },
                 { data: 'action', name: 'action' },
             ]
         });
@@ -159,57 +164,7 @@
             modal.find('.modal-body #slug').val(slug);
         });
         /* Send request update Ajax*/
-        $("#form-update").on( "submit", function( event ) {
-            event.preventDefault();
-            $.ajax({
-                url: 'admin/tag/update',
-                type: 'Put',
-                data: $(this).serialize(),
-            })
-            .done(function(data) {
-                if(data==='ok'){
-                    datatable.ajax.reload();
-                    $('#show-update').modal('hide');
-                    $.alert("Cập Nhật Thành Công",{
-                        autoClose: true,  closeTime: 3000, type: 'success',
-                        position: ['top-right', [45, 30]],
-                        withTime: 200,
-                        title: 'Thành Công',
-                        icon: 'glyphicon glyphicon-ok',
-                        animation: true,
-                        animShow: 'fadeIn',
-                        animHide: 'fadeOut',
-                    });
-                } else {
-                    datatable.ajax.reload();
-                    $('#showupdate').modal('hide');
-                    $.alert('@foreach($errors->all() as $err){{ $err }}@endforeach',{
-                        autoClose: true,  closeTime: 3000, type: 'danger',
-                        position: ['top-right', [50, 30]],
-                        withTime: 200,
-                        title: 'Có lỗi', // title
-                        icon: 'glyphicon glyphicon-remove',
-                        animation: true,
-                        animShow: 'fadeIn',
-                        animHide: 'fadeOut',
-                    });
-                }
-            })
-            .fail(function(data) {
-                datatable.ajax.reload();
-                    $('#show-update').modal('hide');
-                    $.alert("Có Lỗi",{
-                        autoClose: true,  closeTime: 3000, type: 'danger',
-                        position: ['top-right', [50, 30]],
-                        withTime: 200,
-                        title: 'Có lỗi đã xảy ra. ***', // title
-                        icon: 'glyphicon glyphicon-remove',
-                        animation: true,
-                        animShow: 'fadeIn',
-                        animHide: 'fadeOut',
-                });
-            })
-        });
+        
 
         /* Bind cate name to modal*/
         $('#show-delete').on('show.bs.modal', function (event) {
@@ -329,7 +284,7 @@
         });
     });
  </script>
-   <script src="admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
-   <script src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-   <script src="js/bootstrap-flash-alert.js"></script>
+   <script src="{{asset('admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js')}}"></script>
+   <script src="{{asset('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}}"></script>
+   <script src="{{asset('js/bootstrap-flash-alert.js')}}"></script>
 @endsection

@@ -10,27 +10,27 @@
     <base href="{{ asset('') }}"></base>
 
     <!-- Bootstrap Core CSS -->
-    <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="admin_asset/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="{{asset('admin_asset/bower_components/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="admin_asset/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="{{asset('admin_asset/dist/css/sb-admin-2.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="admin_asset/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin_asset/bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- DataTables CSS -->
-    <link href="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="{{asset('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css')}}" rel="stylesheet">
 
     
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
 
 
 
     <!-- DataTables Responsive CSS -->
-    <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <link href="{{asset('admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css')}}" rel="stylesheet">
    
      
 </head>
@@ -46,20 +46,20 @@
    <!-- /#wrapper -->
 
    <!-- jQuery -->
-   <script src="admin_asset/bower_components/jquery/dist/jquery.min.js"></script>
+   <script src="{{asset('admin_asset/bower_components/jquery/dist/jquery.min.js')}}"></script>
 
    <!-- Bootstrap Core JavaScript -->
-   <script src="admin_asset/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script src="{{asset('admin_asset/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
    <!-- Metis Menu Plugin JavaScript -->
-   <script src="admin_asset/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+   <script src="{{asset('admin_asset/bower_components/metisMenu/dist/metisMenu.min.js')}}"></script>
 
    <!-- Custom Theme JavaScript -->
-   <script src="admin_asset/dist/js/sb-admin-2.js"></script>
+   <script src="{{asset('admin_asset/dist/js/sb-admin-2.js')}}"></script>
 
 @yield('script')
 
 
-</script>   
+
 </body>
 </html>

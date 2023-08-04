@@ -89,7 +89,7 @@
 
 @endsection
 @section('script')
-<script src="js/slug.js"></script>
+<script src="{{asset('js/slug.js')}}"></script>
  <!-- DataTables JavaScript -->
  <script type="text/javascript">
     $(document).ready(function() {
@@ -245,7 +245,7 @@
         });
     });
  </script>
-   <script src="admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
-   <script src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-   <script src="js/bootstrap-flash-alert.js"></script>
+   <script src="{{asset('admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js')}}"></script>
+   <script src="{{asset('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}}"></script>
+   <script src="{{asset('js/bootstrap-flash-alert.js')}}"></script>
 @endsection

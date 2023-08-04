@@ -55,22 +55,22 @@ Trang chủ - SỬA CHỮA ĐIỆN LẠNH ĐÀ NẴNG  @endsection
           <div class="swiper-wrapper" style="max-height: 300px;">
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img  style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/1/banner/1.png')}}"  alt="điện lạnh đà nẵng">
+                <img  style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/shares/banner/1.png')}}"  alt="điện lạnh đà nẵng">
               </div>
             </div><!-- End testimonial item -->
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img  style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/1/banner/2.png')}}"   alt="điện lạnh Đình Quốc">
+                <img  style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/shares/banner/2.png')}}"   alt="điện lạnh Đình Quốc">
               </div>
             </div><!-- End testimonial item -->
              <div class="swiper-slide">
               <div class="testimonial-item">
-                <img style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/1/banner/3.png')}}"   alt="Sửa điều hòa đà nẵng">
+                <img style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/shares/banner/3.png')}}"   alt="Sửa điều hòa đà nẵng">
               </div>
             </div><!-- End testimonial item -->
              <div class="swiper-slide">
               <div class="testimonial-item">
-                <img style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/1/banner/4.png')}}"   alt="sửa điện lạnh cho doanh nghiệp tại đà nẵng">
+                <img style="object-fit: cover; width: 100%; height: 100%;" src="{{asset('storage/photos/shares/banner/4.png')}}"   alt="sửa điện lạnh cho doanh nghiệp tại đà nẵng">
               </div>
             </div><!-- End testimonial item -->
           </div>
@@ -92,7 +92,7 @@ Trang chủ - SỬA CHỮA ĐIỆN LẠNH ĐÀ NẴNG  @endsection
         <div class="row gy-4">
 
           <div class="col-lg-3 col-md-6 service-item d-flex" data-aos="fade-up">
-            <div class="icon flex-shrink-0"><i class="fa-solid fa-toolbox"></i></div>
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-screwdriver-wrench"></i></div>
             <div>
               <h4 class="title">Chuyên nghiệp</h4>
               <p class="description">Điện lạnh Đình Quốc sở hữu những người thợ chuyên nghiệp và có kỹ năng về chuyên môn với nhiều năm kinh nghiệm.</p>
@@ -101,7 +101,7 @@ Trang chủ - SỬA CHỮA ĐIỆN LẠNH ĐÀ NẴNG  @endsection
           </div>
           <!-- End Service Item -->
           <div class="col-lg-3 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-toolbox"></i></div>
             <div>
               <h4 class="title">An toàn</h4>
               <p class="description">Giải quyết các vấn đề, sự cố hư hỏng đúng kỹ thuật. Đem lại sự yên tâm tuyệt đối cho khách hàng khi sử dung dịch vụ của Điện Lạnh Đình Quốc</p>

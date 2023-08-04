@@ -8,7 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\ServiceController;
 
 use Illuminate\Support\Facades\Route;
@@ -105,9 +105,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     
         /* Group author */
          Route::prefix('author')->group(function () {
-            Route::get('/',  [AdminController::class,'getList'])->name('list-author');
-            Route::get('data',[AdminController::class,'dataTable'])->name('data-author');
-            Route::delete('delete', [AdminController::class,'delete']);
+            Route::get('/',  [Admincontroller::class,'getList'])->name('list-author');
+            Route::delete('delete', [Admincontroller::class,'delete']);
         });
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

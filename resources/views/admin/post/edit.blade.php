@@ -69,7 +69,7 @@
 <!-- /#page-wrapper -->
 @endsection
 @section('script')
-<script src="js/slug.js"></script>
+<script src="{{js/slug.js')}}"></script>
 <script>
     $(document).ready(function(){
         var options = {
@@ -89,7 +89,7 @@
         $('#category_id').val({{$post->category_id}});
     });
 </script>
-<link rel="stylesheet" type="text/css" href="css/select2.min.css">
-<script src="js/select2.min.js"></script>
-<script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
+<link rel="stylesheet" type="text/css" href="{{asset('css/select2.min.css')}}">
+<script src="js/select2.min.js')}}"></script>
+<script type="text/javascript" language="javascript" src="{{asset('admin_asset/ckeditor/ckeditor.js')}}" ></script>
 @endsection

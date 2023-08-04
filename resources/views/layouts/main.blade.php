@@ -25,8 +25,8 @@
 
 
   <!-- Favicons -->
-  <link href="{{asset('storage/photos/1/banner/logo.png')}}" rel="icon" >
-  <link href="{{asset('storage/photos/1/banner/logo.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('storage/photos/shares/banner/logo.png')}}" rel="icon" >
+  <link href="{{asset('storage/photos/shares/banner/logo.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +63,7 @@
 
       <a href="{{route('home')}}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{asset('storage/photos/1/banner/logo.png')}}" alt="Điện lạnh Đình Quốc - Điện Lạnh Đà Nẵng">
+        <img src="{{asset('storage/photos/shares/banner/logo.png')}}" alt="Điện lạnh Đình Quốc - Điện Lạnh Đà Nẵng">
         <h1>Đình Quốc</h1>
       </a>
 
@@ -94,7 +94,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="{{route('home')}}" class="logo d-flex align-items-center">
             <span>Điện lạnh Đình Quốc</span>
           </a>
           <p>Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn tại khu vực đà nẵng</p>
