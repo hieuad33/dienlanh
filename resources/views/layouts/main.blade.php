@@ -25,7 +25,7 @@
 
 
   <!-- Favicons -->
-  <link href="{{asset('storage/photos/1/banner/logo.png')}}" rel="icon">
+  <link href="{{asset('storage/photos/1/banner/logo.png')}}" rel="icon" >
   <link href="{{asset('storage/photos/1/banner/logo.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

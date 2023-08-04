@@ -29,7 +29,10 @@
                         <th>{{$md->id}}</th>
                          <th>{{$md->name}}</th>
                           <th>{{$md->email}}</th>
-                           <th>{{$md->create_at}}</th>
+                           <th>{{$md->created_at}}</th>
+                           <th><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#show-delete">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Xoá
+                    </button></th>
                         
                     </tr>
                     @endforeach

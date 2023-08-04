@@ -69,7 +69,7 @@
 
             
             <li>
-                <a href="admin/tag"><i class="fa fa-envelope fa-fw"></i> Phản hồi</a>
+                <a href="admin/contact"><i class="fa fa-envelope fa-fw"></i> Phản hồi</a>
                 <!-- /.nav-second-level -->
             </li>
             <li>

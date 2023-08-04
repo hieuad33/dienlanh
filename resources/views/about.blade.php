@@ -79,7 +79,7 @@ Thông tin về doanh nghiệp @endsection
 
 
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about pt-0">
+    <section id="about" class="about pt-0 mt-5">
       <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
@@ -125,34 +125,38 @@ Thông tin về doanh nghiệp @endsection
 
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+
       <div class="container">
         <div class="section-header">
 
           <h3 class="h2" style="color: white;">HÌNH ẢNH</h2>
-
+            <h2>Hình ảnh</h2>
         </div>
 
-        <div class="slides-1 swiper" data-aos="fade-up">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg"   alt="">
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg"   alt="">
-              </div>
-            </div><!-- End testimonial item -->
+        <div class="container" data-aos="fade-up">
+          <div class="d-flex flex-wrap mb-3">
+            <div class="col-lg-4 p-2 p-1">
+              <img alt="sửa điều hòa tại đà nẵng" style="object-fit: contain; max-height: 350px; max-width: 400px;" src="{{asset('upload/im/dienlanh1.jpg')}}">
+            </div>
+            <div class="col-lg-4 p-2">
+              <img alt="Điều hòa đà nẵng" style="object-fit: contain; max-height: 350px; max-width: 400px;"  src="{{asset('upload/im/dienlanh2.jpg')}}">
+            </div>
+            <div class="col-lg-4 p-2">
+              <img alt="điện lạnh đà nẵng" style="object-fit: contain; max-height: 350px;max-width: 400px;"  src="{{asset('upload/im/dienlanh3.jpg')}}">
+            </div>
+            <div class="col-lg-4 p-2">
+              <img alt="đà nẵng điện lạnh"  style="object-fit: contain; max-height: 350px;max-width: 400px;"  src="{{asset('upload/im/dienlanh4.jpg')}}">
           </div>
-          <div class="swiper-pagination"></div>
+            <div class="col-lg-4 p-2">
+              <img alt="cơ điện lạnh đình quốc" style="object-fit: contain; max-height: 350px;max-width: 400px;"  src="{{asset('upload/im/dienlanh5.jpg')}}">
+          </div>
+            <div class="col-lg-4 p-2">
+              <img alt="sửa điện lạnh đà nẵng" style="object-fit: contain; max-height: 350px;max-width: 400px;"  src="{{asset('upload/im/dienlanh6.jpg')}}">
+          </div>
+         
         </div>
-
       </div>
-    </section><!-- End Testimonials Section -->
-
+  
  
   </main><!-- End #main -->
 

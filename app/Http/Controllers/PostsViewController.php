@@ -27,12 +27,10 @@ class PostsViewController extends Controller
         $post=Posts::where('slug',$slug)->first();
         if($post)
         {
-
             $category=Categories::find($post->category_id)->first();
              $tags=$post->tags();
              $post->view++;
              $post->save();
-
         return view('posts.postview')
         
         ->with('post',$post)
@@ -40,17 +38,19 @@ class PostsViewController extends Controller
         ->with('tags',$tags);
         }
         else{
+            
            return view(404);
         }
        
     }
 
-    public function getSearch($search){
-     
-        $posts=Posts::where('title', 'like',"%".$search."%")->where('description', 'like',"%".$search."%");
+    public function getSearch(Request $request){
+          $search = $request->input('search');
+        $posts=Posts::where('title', 'like',"%".$search."%")->get();
+        //->where('description', 'like',"%".$search."%");
         $categories=Categories::all();
         $tags=Tags::all();
-         return view('blog')->with('posts',$posts)->with('categories',$categories)->with('tags',$tags);
+         return view('blog')->with('posts',$posts)->with('categories',$categories)->with('tags',$tags)->with('keysearch',$search);
 
         
     }
@@ -62,7 +62,7 @@ class PostsViewController extends Controller
         $categories=Categories::all();
         $tags=Tags::all();
     
-         return view('blog')->with('posts',$posts)->with('categories',$categories)->with('tags',$tags);
+         return view('blog')->with('posts',$posts)->with('categories',$categories)->with('tags',$tags)->with('categoryname',$category);
             }
             else{
                 return view(404);
@@ -75,7 +75,7 @@ class PostsViewController extends Controller
         $categories=Categories::all();
         $tags=Tags::all();
     
-         return view('blog')->with('posts',$posts)->with('categories',$categories)->with('tags',$tags);
+         return view('blog')->with('posts',$posts)->with('categories',$categories)->with('tags',$tags)->with('tagname',$tag);
     }
 
 }

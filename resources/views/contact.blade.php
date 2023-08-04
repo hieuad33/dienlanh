@@ -11,7 +11,7 @@ Liên hệ @endsection
 @section('share')
   <meta property="og:type" content="article">
   <meta property="og:title" content="Điện Lạnh Đình Quốc | Điện lạnh tại đà nẵng ">
-  <meta property="og:image" content="ảnh khi share">
+  <meta property="og:image" content="{{asset('upload/home/share.png')}}">
   <meta property="og:description" content="CChúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn">
   <meta property="og:url" content="liên kết khi bấm vào">
 @endsection 

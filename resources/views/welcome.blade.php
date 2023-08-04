@@ -1,18 +1,18 @@
 <x-main-layout>
   @section('page')
-Trang chủ @endsection   
+Trang chủ - SỬA CHỮA ĐIỆN LẠNH ĐÀ NẴNG  @endsection   
 
  @section('meta')
  <meta content="Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn tại khu vực đà nẵng">
   <meta content="Điện lạnh tại đà nẵng, sửa điều hòa tại đà nẵng, điện lạnh đình Quốc, sửa máy làm kem, vệ sinh điều hòa, sửa tủ lạnh" name="keywords">
+  <meta content="Điện lạnh đà nẵng, sửa điều hòa đà nẵng, điện lạnh đình Quốc, sửa máy làm kem, vệ sinh điều hòa, sửa tủ lạnh, đình quốc" name="tag">
  @endsection  
-
   
 @section('share')
  <meta property="og:type" content="article">
 <meta property="og:title" content="Điện Lạnh Đình Quốc | Điện lạnh tại đà nẵng">
-<meta property="og:image" content="{{asset('upload/home/share.png')}}">
- <meta property="og:description" content="CChúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn">
+<meta property="og:image"  content="{{asset('upload/im/dienlanh5.jpg')}}">
+ <meta property="og:description" content="Chúng tôi là đơn vị cung cấp giải pháp điện lạnh toàn diện cho nhà ở và công ty của bạn">
 <meta property="og:url" content="{{route('home')}}">
 @endsection 
 @section('css')
@@ -44,7 +44,7 @@ Trang chủ @endsection
 
           <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
 
-           <a  href="tel:{{$phone}}"> <img style="max-height:100px" src="{{asset('upload/call.gif')}}" alt="goi ngay"></a>
+           <a  href="tel:{{$phone}}"> <img style="max-height:100px" src="{{asset('upload/call.gif')}}" alt="Gọi ngay cho điện lạnh đình quốc điện lạnh đà nẵng"></a>
 
          
           </div>
@@ -95,7 +95,7 @@ Trang chủ @endsection
             <div class="icon flex-shrink-0"><i class="fa-solid fa-toolbox"></i></div>
             <div>
               <h4 class="title">Chuyên nghiệp</h4>
-              <p class="description">Chúng tôi sở hữu những người thợ chuyên nghiệp và có kỹ năng về chuyên môn với nhiều năm kinh nghiệm.</p>
+              <p class="description">Điện lạnh Đình Quốc sở hữu những người thợ chuyên nghiệp và có kỹ năng về chuyên môn với nhiều năm kinh nghiệm.</p>
               
             </div>
           </div>
@@ -126,7 +126,6 @@ Trang chủ @endsection
              
             </div>
           </div><!-- End Service Item -->
-           
 
         </div>
 
@@ -148,9 +147,9 @@ Trang chủ @endsection
               <div class="card-img">
                 <div  class="img-fluid" >
                 @if($service->image)             
-                  <img src="{{$service->image}}" alt="$service->slug" class="imgsize">          
+                  <img src="{{$service->image}}" alt="{{$service->name}}" class="imgsize">          
                 @else
-                  <img src="assets/img/storage-service.jpg" alt="" class="imgsize">
+                  <img src="assets/img/storage-service.jpg" alt="{{$service->name}}" class="imgsize">
                 @endif
                 </div>
               </div>
@@ -175,7 +174,7 @@ Trang chủ @endsection
 
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-            <img src="assets/picture/view/ky-su-dien-lanh.png" class="img-fluid" alt="">
+            <img src="assets/picture/view/ky-su-dien-lanh.png" class="img-fluid" alt="Điện lạnh Đà Nẵng">
            <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a> -->
           </div>
           <div class="col-lg-6 content order-last  order-lg-first">
@@ -217,7 +216,7 @@ Trang chủ @endsection
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h4>Địa chỉ:</h4>
-                 <a href="https://www.google.com/maps?ll=16.050488,108.172976&z=16&t=m&hl=vi&gl=US&mapclient=embed&cid=9577128908958267783" target="_blank">{{$address}}  </a>
+                 <a  href="https://www.google.com/maps?ll=16.050488,108.172976&z=16&t=m&hl=vi&gl=US&mapclient=embed&cid=9577128908958267783" target="_blank">{{$address}}  </a>
               </div>
             </div><!-- End Info Item -->
 
@@ -277,7 +276,7 @@ Trang chủ @endsection
              <div class="pricing-item ">
               <div class="row gy-4 align-items-center features-item aos-init aos-animate" data-aos="fade-up">
                 <div class="col-md-5">
-                  <img src="{{asset($post->feture)}}" class="img-fluid" alt="">
+                  <img src="{{asset($post->feture)}}" class="img-fluid" alt="{{$post->title}}">
                 </div>
                 <div class="col-md-7">
                   <h3>{{$post->title}}</h3>

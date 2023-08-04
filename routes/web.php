@@ -23,7 +23,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//view cho khách hàng
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web','auth']], function (){
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+
 
 //trang chủ
 Route::get('/', [HomeController::class,'index']);
@@ -32,12 +36,12 @@ Route::get('/about', function () {
 })->name('about');
 Route::get('/services', [ServiceController::class,'getview'])->name('service');
 Route::get('/services/{slug}', [ServiceController::class,'getServiceslug']);
-Route::get('/services/search/{search}', [ServiceController::class,'getSearch']);
+Route::get('servicesreach', [ServiceController::class,'search'])->name('fservice');
 Route::get('/services/{id}', [ServiceController::class,'getService']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/posts/{slug}', [PostsViewController::class,'getPostslug']);
-Route::get('/posts/search/{search}', [PostsViewController::class,'getSearch']);
+Route::get('postsearch', [PostsViewController::class,'getSearch'])->name('fpost');
 Route::get('/posts/category/{slug}', [PostsViewController::class,'getCategoryslug']);
 Route::get('/posts/tags/{slug}', [PostsViewController::class,'getTagslug']);
 Route::get('/posts', [PostsViewController::class,'index'])->name('posts');
@@ -92,6 +96,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
             Route::post('update/{id}', [ServiceController::class,'postUpdate']);
             Route::get('delete/{id}', [ServiceController::class,'getDelete']);
         });
+         Route::prefix('contact')->group(function () {
+            Route::get('/', [ContactController::class,'getList'])->name('list-contact');
+            Route::get('data',[ContactController::class,'dataTable'])->name('data-contact');
+          Route::put('delete', [ContactController::class,'delete']);
+        });
+
     
         /* Group author */
          Route::prefix('author')->group(function () {
@@ -99,9 +109,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
             Route::get('data',[AdminController::class,'dataTable'])->name('data-author');
             Route::delete('delete', [AdminController::class,'delete']);
         });
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('pr.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('pr.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('pr.destroy');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
         
     });
 });
@@ -109,19 +119,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 
 
-Route::middleware('auth')->group(function () {
-   
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-}); 
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web','auth']], function (){
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+
 
 // xay ra ko khong co rt ton tai 404
-Route::fallback(function () {
-    return view(404);
-});
+//Route::fallback(function () {
+//    return 404;
+  //  return view(404);
+//});
 require __DIR__.'/auth.php';

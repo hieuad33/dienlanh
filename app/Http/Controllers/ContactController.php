@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Session;
 
+use DataTables;
 class ContactController extends Controller
 {
     /**
@@ -64,21 +65,19 @@ class ContactController extends Controller
 
         public function getList()
     {
-        $tags=Tags::all();
-        return view('admin.tag.list',['tags'=>$tags]);
+        $contact=Contact::all();
+        return view('admin.contact.list',['contact'=>$contact]);
     }
 
    
     public function dataTable()
     { 
-        $model = Tags::query();
+        $model = Contact::query();
         return DataTables::eloquent($model)
-                ->addColumn('post_count', function(Tags $tag) {
-                    return $tag->posts->count() . ' bài';
-                })
+                
                 ->addColumn('action', '
                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#show-update">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa 
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> xem 
                     </button>
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#show-delete">
                         <i class="fa fa-trash" aria-hidden="true"></i> Xoá
@@ -88,16 +87,16 @@ class ContactController extends Controller
 
   
 
-    public function delete(Request $request)
+
+       public function delete(Request $request)
     {
         if($request->ajax()){
-            $tag = Tags::find($request->input('id'));
-            if($tag){
-                $tag->posts()->detach();
-                $tag->delete();
+            $contact = Contact::where('id',$request->input('id'))->first();
+            if($contact){
+                 $contact->delete();
                 return 'ok';
             }
-            else return 'Không tồn tại tag.';
+            else return 'Không tồn tại phản hồi.';
         } else return 'err';
     }
 

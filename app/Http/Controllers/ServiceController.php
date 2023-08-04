@@ -13,6 +13,11 @@ class ServiceController extends Controller
         $services = Service::all();
         return view('service',['services'=> $services]);    
     }
+     public function search(Request $request){
+        $search = $request->input('search');
+        $services = Service::where('name', 'like',"%".$search."%")->get();
+        return view('service',['services'=> $services])->with('keysearch',$search   );    
+    }
 
     public function getServiceslug($slug){
         $service = Service::where('slug',$slug)->first();
