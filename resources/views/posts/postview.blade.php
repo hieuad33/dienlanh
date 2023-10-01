@@ -41,7 +41,7 @@
           <ol>
             <li><a href="">Trang chủ</a></li>
             <li><a href="">Bài viết</a></li>
-            <li>{{$category->name}}</li>
+            <li>{{$post->category->name}}</li>
             <li>{{$post->title}}</li>
           </ol>
         </div>
